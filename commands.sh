@@ -1,10 +1,16 @@
 #!/bin/bash
 
-# 添加guest02用户
-sudo adduser guest02 --disabled-password --gecos ""
+# 输出调试信息
+echo "开始执行脚本" >&2
 
-# 修改guest02用户密码
-echo 'guest02:XIONGHUI123' | sudo chpasswd
+# 添加 guest02 用户
+sudo adduser guest02 --disabled-password --gecos "" >&2
 
-# 将guest02用户添加到wheel组
-sudo usermod -aG wheel guest02
+# 修改 guest02 用户密码
+echo 'guest02:XIONGHUI123' | sudo chpasswd >&2
+
+# 将 guest02 用户添加到 wheel 组
+sudo usermod -aG wheel guest02 >&2
+
+# 输出完成信息
+echo "脚本执行完毕" >&2
